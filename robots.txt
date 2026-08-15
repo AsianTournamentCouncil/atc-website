@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asiantournamentcouncil.github.io/atc-website/sitemap.xml
