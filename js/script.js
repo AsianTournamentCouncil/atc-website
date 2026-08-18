@@ -1,5 +1,5 @@
 // ATC — Asian Tournament Council
-// Mobile nav toggle + contact form (mailto fallback, no backend yet)
+// Mobile nav toggle + contact form (no backend — composes a copyable message)
 
 document.addEventListener("DOMContentLoaded", function () {
   var toggle = document.querySelector(".nav-toggle");
@@ -20,17 +20,51 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   var form = document.getElementById("contact-form");
-  if (form) {
+  var resultBox = document.getElementById("cf-result");
+  var output = document.getElementById("cf-output");
+  var copyBtn = document.getElementById("cf-copy");
+
+  if (form && resultBox && output) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var name = encodeURIComponent(document.getElementById("cf-name").value);
+      var name = document.getElementById("cf-name").value;
       var email = document.getElementById("cf-email").value;
-      var subject = encodeURIComponent(document.getElementById("cf-subject").value || "Contact from ATC website");
-      var message = encodeURIComponent(document.getElementById("cf-message").value);
-      var body = encodeURIComponent(
-        "Name: " + decodeURIComponent(name) + "\nEmail: " + email + "\n\n" + decodeURIComponent(message)
-      );
-      window.location.href = "mailto:tgcbal3472@gmail.com?subject=" + subject + "&body=" + body;
+      var subject = document.getElementById("cf-subject").value;
+      var message = document.getElementById("cf-message").value;
+
+      var text = "Subject: " + subject + "\nName: " + name;
+      if (email) {
+        text += "\nReply email: " + email;
+      }
+      text += "\n\n" + message;
+
+      output.value = text;
+      resultBox.style.display = "block";
+      output.focus();
+      output.select();
+    });
+  }
+
+  if (copyBtn && output) {
+    copyBtn.addEventListener("click", function () {
+      output.select();
+      var copied = false;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(output.value).then(function () {
+          copyBtn.textContent = "Copied!";
+          setTimeout(function () { copyBtn.textContent = "Copy to clipboard"; }, 2000);
+        });
+        copied = true;
+      }
+      if (!copied) {
+        try {
+          document.execCommand("copy");
+          copyBtn.textContent = "Copied!";
+          setTimeout(function () { copyBtn.textContent = "Copy to clipboard"; }, 2000);
+        } catch (err) {
+          copyBtn.textContent = "Select & copy manually";
+        }
+      }
     });
   }
 });
