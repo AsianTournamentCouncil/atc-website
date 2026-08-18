@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Asian Tournament Council</title>
-<meta name="description" content="Contact Asian Tournament Council (ATC) for ban disputes, scam reports, organizer partnerships, ATC Title Wars slot booking, or general questions.">
+<meta name="description" content="Contact Asian Tournament Council (ATC) for ban disputes, scam reports, organizer partnerships, or general questions.">
 <link rel="canonical" href="https://asiantournamentcouncil.github.io/atc-website/contact.html">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Asian Tournament Council">
 <meta property="og:title" content="Contact — Asian Tournament Council">
-<meta property="og:description" content="Contact Asian Tournament Council (ATC) for ban disputes, scam reports, organizer partnerships, ATC Title Wars slot booking, or general questions.">
+<meta property="og:description" content="Contact Asian Tournament Council (ATC) for ban disputes, scam reports, organizer partnerships, or general questions.">
 <meta property="og:url" content="https://asiantournamentcouncil.github.io/atc-website/contact.html">
 <meta property="og:image" content="https://asiantournamentcouncil.github.io/atc-website/assets/og-image.png">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact — Asian Tournament Council">
-<meta name="twitter:description" content="Contact Asian Tournament Council (ATC) for ban disputes, scam reports, organizer partnerships, ATC Title Wars slot booking, or general questions.">
+<meta name="twitter:description" content="Contact Asian Tournament Council (ATC) for ban disputes, scam reports, organizer partnerships, or general questions.">
 <meta name="twitter:image" content="https://asiantournamentcouncil.github.io/atc-website/assets/og-image.png">
 
 <link rel="icon" href="assets/favicon.ico" sizes="any">
@@ -38,7 +38,7 @@
     "https://youtube.com/@atccouncil",
     "https://discord.gg/yZr3uap9"
   ],
-  "email": "tgcbal3472@gmail.com",
+  "telephone": "0310 1452726",
   "founder": {
     "@type": "Person",
     "name": "Pain FC",
@@ -126,8 +126,8 @@
             <input id="cf-name" type="text" required>
           </div>
           <div>
-            <label for="cf-email">Email</label>
-            <input id="cf-email" type="email" required>
+            <label for="cf-email">Your email (optional, for a reply)</label>
+            <input id="cf-email" type="email">
           </div>
           <div>
             <label for="cf-subject">Subject</label>
@@ -136,7 +136,6 @@
               <option>Ban dispute / report evidence</option>
               <option>Scam / organizer complaint</option>
               <option>Partnership / join as organizer</option>
-              <option>ATC Title Wars — slot booking</option>
               <option>Press / media</option>
             </select>
           </div>
@@ -144,18 +143,18 @@
             <label for="cf-message">Message</label>
             <textarea id="cf-message" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="justify-self:start;">Send message</button>
+          <button type="submit" class="btn btn-primary" style="justify-self:start;">Prepare message</button>
         </form>
-        <p style="font-size:0.8rem;margin-top:10px;">This form opens your email app addressed to ATC —
-        it does not send automatically from this page yet.</p>
+        <div id="cf-result" style="display:none;margin-top:22px;">
+          <label for="cf-output">Copy this and send it via Discord or phone</label>
+          <textarea id="cf-output" class="form-grid" style="width:100%;min-height:140px;" readonly></textarea>
+          <button id="cf-copy" type="button" class="btn" style="margin-top:12px;">Copy to clipboard</button>
+        </div>
+        <p style="font-size:0.8rem;margin-top:10px;">This form does not send automatically — prepare your
+        message above, then copy it and send via Discord or phone.</p>
       </div>
       <div>
         <div class="contact-cards">
-          <div class="card">
-            <div class="hex">@</div>
-            <h3>Email</h3>
-            <p><a href="mailto:tgcbal3472@gmail.com">tgcbal3472@gmail.com</a></p>
-          </div>
           <div class="card">
             <div class="hex">D</div>
             <h3>Discord</h3>
@@ -171,15 +170,11 @@
             <h3>CEO</h3>
             <p><a href="ceo.html">Pain FC — Founder &amp; CEO</a></p>
           </div>
-        </div>
-        <div class="card" style="margin-top:24px;">
-          <div class="hex">☎</div>
-          <h3>ATC Title Wars — Slot Booking</h3>
-          <ul class="rule-list" style="margin-top:8px;">
-            <li style="padding:10px 0;"><span class="n">☎</span><div><p style="margin:0;">+92 317 3124405</p></div></li>
-          <li style="padding:10px 0;"><span class="n">☎</span><div><p style="margin:0;">+62 821-3119-912</p></div></li>
-          <li style="padding:10px 0;"><span class="n">☎</span><div><p style="margin:0;">0310 1452726</p></div></li>
-          </ul>
+          <div class="card">
+            <div class="hex">☎</div>
+            <h3>Phone</h3>
+            <p>0310 1452726</p>
+          </div>
         </div>
       </div>
     </div>
